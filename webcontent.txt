@@ -1,0 +1,62 @@
+Main Page:
+
+Heading: Welcome to Team 16's Website
+p: This is Team 16's Website
+
+(SHOW TEAM)
+
+Project Page:
+
+Heading: Background
+p: Nearly 9,500 people die in London every year due to long term exposure to air pollution. For the past 5 years London has been in breach of the EU NO<sub>2</sub> safety limit. Because of this we have been tasked to design a smartwatch app that gets up to date data about the levels of air pollution as well as other forms of pollution so people can make more informed decisions about where in the city they go. Our clients are Nicolai Marquardt and Steve Houben.
+
+Heading: Brief
+p: Our project brief is to design and develop a city pollution visualisation app for smartwatches that allows users to view key pollution statistics about their current location that may assist in deicision making
+
+Heading: System Overview / Project Diagram: (SHOW DIAGRAM)
+p: As shown in the diagram, our project attempts to collect data from multiple data source to produce a city pollution app for London
+This the basic overview of how technologies are used within our project, with a Node JS API being used to query the data sources and saving the queried results into a MongoDB database. The smartphone makes requests and gets responses from the API in JSON/XML format and this is passed onto the smart watch where data is shown in visualisations for the user.
+
+Heading: Project Diagram Explained: (SHOW DIAGRAM)
+p: The following technologies have been selected by our team to be used for elements of our project: Java for the Smartwatch app and smartphone app programming, Node JS for the backend API, MongoDB for the data storage for the pollution data, Heroku used to host the app
+We have selected 3 data sets for our project that will provide us with a variety of different interval updates and detailed information about pollution types. This decision was made as these were the most relevant pollution data and the frequency of updates were spaced out enough for us to have reliable and relevant data for the user to use with a range of historical and live data
+In terms of hardware, we are aiming the app to be used with android smartphones and android wear smartwatch
+Another hardware device being used is the Intel Smart Citizen, an Arduino board that contains many sensors to collect data about air, noise and light pollution. We are using this board as we are able to query the sensor values from all Smart Citizen boards within the London area.
+
+Heading: Data Update Process: (SHOW DIAGRAM)
+p: Here is a simple example of what we envision the data update process to be for our app with the interaction between technologies
+User enters new zone
+Smartphone GPS detects change in location
+Data Update Request Sent
+JSON request sent with zone information from smartphone
+Zone Information Generated
+RESTful API queries datasets
+Data collated into MongoDB with matching field information
+Pollution Data Response
+JSON / XML Data sent to Smartphone
+Display To User
+Smartphone sends smartwatch the response in JSON
+Smartwatch then displays visualisation to the user
+
+Heading: Individual Research
+
+(Get the Google Docs)
+
+Mock-Ups Page:
+Heading: Individual Visualisations (ADD VISUALISATIONS)
+p: Explanantion about our visualisations
+
+Bi-Weekly Report Page: 
+Heading: Bi_Weekly Reports (SHOW HEADING)
+Tabbed format for the information
+
+Plan Page: 
+Heading: Plans for Term 2:
+p: We need to create a well-defined schema for the collated data and the low to high rating
+We need to get started writing the RESTful API and planning on how this should work
+We need to start getting 	
+
+GitHub Page:
+Heading: Github
+p: Below is a link to our Github Repository : https://github.com/hennersz/PhyCompBackEnd
+
