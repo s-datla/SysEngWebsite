@@ -1,0 +1,33 @@
+html {
+	display: block;
+	font-weight: 100;
+}
+
+body {
+	display:flex;
+	min-height: 100vh;
+	flex-direction: column;
+}
+
+h1, h2, h3, h4, h5 {
+	color: #297F00;
+}
+
+
+main {
+	flex: 1 0 auto;
+}
+
+.parallax-container{
+	max-height: 400px;
+}
+
+.default-back {
+	background-color: #297F00 !important
+}
+
+.default-text {
+	color: #297F00 !important
+}
+
+

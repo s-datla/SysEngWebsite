@@ -3,21 +3,122 @@
 
 <head>
     <title>Systems Engineering Team 16</title>
-
-    <script src="bower_components/webcomponentsjs/webcomponents-lite.min.js"></script>
-
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, minimum-scale=1.0, initial-scale=1, user-scalable=yes">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <link rel="icon" href="favicon.ico">
-
-    <link rel="import" href="bower_components/paper-styles/classes/global.html">
-    <link rel="import" href="imports/imports.html">
-    <link rel="import" href="imports/main-content.html">
+    <link rel="icon" href="media/icons/favicon.ico">
+    <!-- Imports : Stylesheets -->
+    <link type="text/css" rel="stylesheet" href="css/main-style.css" media="screen,projection">
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    <!-- Imports : Icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
 
-<body class="fullbleed layout vertical">
-    <main-content></main-content>
-</body>
+<body class="scrollspy">
+    <!-- Navigation Bar -->
+    <header>
+        <div class="navbar-fixed">
+            <nav class="white top-nav">
+                <div class="container">
+                    <div class="nav-wrapper">
+                        <a href="#top" class="brand-logo center default-text">City Pollution Data Visualizer</a>
+                        <a href="#" data-activates="slide-out" class="button-collapse left show-on-large"><i class="large material-icons default-text">menu</i></a>
+                    </div>
+                </div>
 
-</html>
+                <!-- Side Nav -->
+                <ul id="slide-out" class="side-nav">
+                    <li class="no-padding">
+                        <div class="container">
+                            <h4>Menu</h4>
+                        </div>
+                    </li>
+                    <li><a href="#!" class="active">Home</a></li>
+                    <li><a href="html/collaboration.html">Collaboration</a></li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Documentation<i class="material-icons default-text right">arrow_drop_down</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="#!">1</a></li>
+                                        <li><a href="#!">2</a></li>
+                                        <li><a href="#!">3</a></li>
+                                        <li><a href="#!">4</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="html/development.html">Development</a></li> 
+                    <li><a href="html/forum.html">Forum</a></li>
+                    <li><a href="html/about-us.html">About Us</a></li>
+                </ul>
+
+            </nav>
+        </div>
+    </header>
+    <!-- Main Body -->
+    <main>
+        <div class="parallax-container">
+            <div class="section no-pad-bot valign-wrapper">
+                <div class="container">
+                    <div class="row">
+                        <br>
+                        <br>
+                        <h2 class="white-text center">Welcome to Team 16's Website</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="parallax"><img src="media/banner-image.jpg"></div>
+        </div>
+        <div class="section">
+            <div class="container center">
+                <h4>Project Background</h4>
+                <p>
+                    Nearly 9,500 people die in London every year due to long term exposure to air pollution. For the past 5 years London has been in breach of the EU NO<sub>2</sub> safety limit. Because of this we have been tasked to design a smartwatch app that gets up to date data about the levels of air pollution as well as other forms of pollution so people can make more informed decisions about where in the city they go. Our clients are Nicolai Marquardt and Steve Houben
+                </p>
+            </div>
+        </div>
+        <div class="section">
+            <div class="container">
+            </div>
+        </div>
+    </main>
+    <footer class="page-footer default-back">
+        <div class="container">
+            <div class="row">
+                <div class="col l6 s12">
+                    <h5 class="white-text">About Us</h5>
+                    <p class="white-text">Madeleine Whitehall</p>
+                    <p class="white-text">Srikrishna Datla</p>
+                    <a href="" class="waves-effect waves-light btn grey lighten-4 default-text">Find out more</a>
+                </div>
+                <div class="col l6 offset-12 s12">
+                    <a href=""><h5 class="white-text">Links</h5></a>
+                    <p class="white-text"></p>
+                    <p class="white-text"></p>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                <div class="row">
+                    <div class="col s4">
+                        <span class="grey-text text-lighten-5">Copyright © 2016 - Srikrishna Datla</span>
+                    </div>
+                    <div class="col s4">
+                        <a href="http://fierce-peak-41091.herokuapp.com/" class="center grey-text text-lighten-4">Link to our API</a>
+                    </div>
+                    <div class="col s4">
+                        <a href="http://www.engineering.ucl.ac.uk/" class="white-text grey-lighten-4 right"></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- Imports : JavaScript -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+</body>
