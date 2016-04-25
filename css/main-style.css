@@ -1,6 +1,5 @@
 html {
 	display: block;
-	font-weight: 100;
 }
 
 body {
@@ -10,12 +9,22 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-	color: #297F00;
+	color: #689f38;
 }
 
+footer {
+	margin-top: 0 !important
+}
 
-main {
-	flex: 1 0 auto;
+blockquote {
+  margin: 20px 0;
+  padding-left: 1.5rem;
+  border-left: 5px solid #689f38;
+}
+
+.parallax {
+	opacity: 0.8;
+	filter: alpha(opacity=80);
 }
 
 .parallax-container{
@@ -23,11 +32,54 @@ main {
 }
 
 .default-back {
-	background-color: #297F00 !important
+	background-color: #689f38 !important
 }
 
 .default-text {
-	color: #297F00 !important
+	color: #689f38 !important
 }
 
+.alt-back {
+	background-color: #7cb342 !important
+}
+
+.dark-back {
+	background-color: #558b2f !important
+}
+
+.table-of-contents a:hover {
+  color: #a8a8a8;
+  padding-left: 19px;
+  border-left: 1px solid #689f38;
+}
+
+.table-of-contents a.active {
+  font-weight: 500;
+  padding-left: 17px;
+  border-left: 3px solid #689f38;
+}
+
+.banner-image {
+	height: 64px;
+	width: 64px;
+}
+
+.table-of-contents {
+	position: fixed;
+}
+
+ul.browser-default li {
+	list-style-type: initial;
+}
+
+.avatar {
+	max-width: 100px;
+	max-height: 100px;
+	display: block;
+	margin: 0 auto;
+}
+
+.avatar-card {
+	min-height: 120px;
+}
 

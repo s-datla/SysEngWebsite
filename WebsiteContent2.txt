@@ -1,0 +1,150 @@
+Website Content:
+
+1 : Main Homepage - Main page with product features, Video of the final proof of concept application/system (this should show how it is set up and used, demonstrating its functionality; it is not a video of your April 27th presentation)
+
+2 : Project Background
+	
+2.1 : Why is pollution important?
+
+p: Air quality in cities is a constant issue, affecting millions of people worldwide and responsible for many ailments. In London alone, 9,500 people die annually from long-term exposure to air pollution, exceeding expected values by twice the amount. In a recent study undertaken by researchers, two key pollutants were identified as the main offenders:
+NO<sub>2</sub> and PM2.5 (fine particulates which are less than 2.5 micrometers in diameter).
+
+Chart: var data = {
+        labels: ["1994", "1995", "1996", "1997", "1998", "1999", "2000", "2001", "2002", "2003", "2004", "2005", "2006", "2007", "2008", "2009", "2010", "2011", "2012", "2013", "2014"],
+        datasets: [{
+            label: "Sulphur Dioxide (million tonnes)",
+            fill: false,
+            backgroundColor: "rgba(255,165,0,0.2)",
+            borderColor: "rgba(255,165,0,0.5)",
+            pointBorderColor: "rgba(255,165,0,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(255,165,0,1)",
+            pointHoverBorderColor: "rgba(255,165,0,1)",
+            pointHoverBorderWidth: 2,
+            data: [2.66, 2.37, 2.01, 1.65, 1.63, 1.25, 1.22, 1.14, 1.01, 0.99, 0.83, 0.71, 0.67, 0.59, 0.49, 0.40, 0.42, 0.39, 0.44, 0.39, 0.31]
+        }, {
+            label: "Nitrogen Oxides (million tonnes)",
+            fill: false,
+            backgroundColor: "rgba(128,0,128,0.2)",
+            borderColor: "rgba(128,0,128,0.5)",
+            pointBorderColor: "rgba(128,0,128,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(128,0,128,1)",
+            pointHoverBorderColor: "rgba(128,0,128,1)",
+            pointHoverBorderWidth: 2,
+            data: [2.5, 2.37, 2.26, 2.08, 2.02, 1.9, 1.83, 1.81, 1.7, 1.67, 1.63, 1.62, 1.57, 1.5, 1.35, 1.17, 1.14, 1.06, 1.08, 1.04, 0.95]
+        }, {
+            label: "PM2.5 (million tonnes)",
+            fill: false,
+            backgroundColor: "rgba(34,139,34,0.2)",
+            borderColor: "rgba(34,139,34,0.5)",
+            pointBorderColor: "rgba(34,139,34,1)",
+            pointBackgroundColor: "#fff",
+            pointBorderWidth: 1,
+            pointHoverRadius: 5,
+            pointHoverBackgroundColor: "rgba(34,139,34,1)",
+            pointHoverBorderColor: "rgba(34,139,34,1)",
+            pointHoverBorderWidth: 2,
+            data: [0.180, 0.161, 0.161, 0.151, 0.145, 0.142, 0.130, 0.128, 0.112, 0.113, 0.110, 0.108, 0.107, 0.104, 0.104, 0.098, 0.106, 0.097, 0.103, 0.108, 0.105]
+        }]
+    };
+
+Reference : https://www.gov.uk/government/uploads/system/uploads/attachment_data/file/486085/Emissions_of_air_pollutants_statistical_release_2015_-_Final__2_.pdf, DEFRA National Statistics Release: Emissions of air pollutants in the UK, 1970 to 2014
+
+p: The line graph on the left displays emissions levels for various pollutants for the UK (units are million tonnes). Due to efforts from various UK bodies to curb the levels of emissisons, we can see a gradual decline in pollution levels of major pollutants. However, in certain urban areas there are still times during the year when emissions are present in high quantities. This information is freely available from multiple sources, but not provided in a simple format for the general public to understand and adapt their daily activities to. 
+
+p: There is an opportunity to provide an easy to use application that can achieve this task and assist users in modifying their behavious based on pollution statistics in their current location. For this reason, we have been tasked by the Intel Collaborative Research Institue, Microsoft Research, and UCL Engineering to design and develop such as system.
+
+2.2 : Project Background
+
+Heading : Project Brief
+
+p: Our project brief is to design and develop a city pollution visualisation app for smartwatches that allows users to view key pollution statistics about their current location that may assist in decision making.
+
+Heading : Initial Requirements - MoSCoW
+
+tr: Must
+
+p: Use 3 pollution data sets updated at different rates ie live, daily, yearly
+Display data visually on a smartwatch
+Have a general view and a detailed view for each type of data
+Interact with an android app
+Must update as the user moves round the city and periodically or when the user requests a refresh
+Have a clear simple UI
+
+tr: Should
+
+p: Have our own database to consolidate all other data sources into
+Send notifications to users based on air quality and their quality preferences
+Have synchronous and asynchronous connection to database
+Store the last set of data offline in the app
+Have clearly defined zones for the city
+
+tr: Could
+
+p: Include social data eg twitter posts or facebook etc.
+Include traffic data
+Allow user to select which information they want to display
+
+tr: Would
+
+p: Extend for use in other cities
+Extend to a fully fledged android or web app for visualisations as well
+Develop api for our database so others can use the data we have consolidated
+Expand the number of data sources we are using
+
+
+3 : Collaboration Page - SDK/collaboration opportunities for further development
+
+Heading: Current Development
+
+p: Based on the final requirements we followed, we have implemented the following elements of the system:
+p: 
+
+4 : Development Page - Final requirements identified for the final proof of concept, Development plan, iterations and forks in prototypes, Architectural diagrams
+Technical achievements, implementation details, use of design patterns
+Management of the project including work packages completed between the team members
+Testing and evaluation of the product solution
+
+
+5 : Documentation Page - Referenced materials cited and examples/trials made, System manual and user manual
+
+6 : Forum Page - Community forum
+
+7 : About Us
+
+Heading : Meet the Team
+
+p: Our group is composed of 2 teams of 2nd-year Computer Scientists from UCL. 
+
+Sub-Heading: Team 15
+
+tr: Henry Mortimer | henry@morti.plus.com
+Roles: Project Lead (Team 15), Client Liaison, Infrastructure Lead
+
+tr: Mingqian Wang | mingqian.wang.14@ucl.ac.uk
+Roles: Chief Researcher, Integration Lead
+
+Sub-Heading: Team 16
+
+tr: Srikrishna Datla  |  sri_dalta@live.co.uk
+Roles: Project Lead (Team 16), Client Liaison, Technical Lead, Database Designer
+
+tr: Madeleine Whitehall  |  madeleinewhitehall@hotmail.co.uk
+Roles: User Interface Lead, Chief Researcher, Chief Editor 
+
+
+Heading : Clients
+
+tr: Intel Collaborative Research Institute
+p: Founded in 1968, Intel is one of the largest american multinational manufacturers of a range of advanced internal computer circuitry. Intel has been assisting in this project by providing access to the Intel Smart Citizen API, a multi sensor arduino board that gets the current light, noise and air quality levels from its sensors.
+
+tr: UCL Engineering
+p: We have been partnered with the Physical Computing section of the Computer Science Department in UCL, specifically by Dr Nicolai Marquardt and Steven Houben. They are supervising our project and have provided resources such as the smartwatches and the Intel SmartCitizen board as well as guiding us throughout the development of the project in Term 1.
+
+tr: Microsoft Research
+p: Microsoft Research is the research division of Microsoft, aiming to be at the forefront of technology and solve difficult real world problems with state of the art technologies.

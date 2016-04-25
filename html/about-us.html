@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Systems Engineering Team 16</title>
     <meta charset="utf-8">
@@ -7,23 +8,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <link rel="icon" href="../media/icons/favicon.ico">
     <!-- Imports : Stylesheets -->
-    <link type="text/css" rel="stylesheet" href="../css/main-style.css" media="screen,projection">
     <link type="text/css" rel="stylesheet" href="../css/materialize.min.css" media="screen,projection" />
+    <link type="text/css" rel="stylesheet" href="../css/main-style.css" media="screen,projection">
     <!-- Imports : Icons -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
-<body class="scrollspy">
+
+<body>
     <!-- Navigation Bar -->
     <header>
-        <div class="navbar-fixed">
+        <div class="navbar">
             <nav class="white top-nav">
                 <div class="container">
                     <div class="nav-wrapper">
-                        <a href="../index.html" class="brand-logo center default-text">City Pollution Data Visualizer</a>
+                        <a href="../index.html" class="brand-logo center default-text">City Pollution Data Visualiser</a>
+                        <img src="../media/icons/web_hi_res_512.png" class="banner-image responsive-img right">
                         <a href="#" data-activates="slide-out" class="button-collapse left show-on-large"><i class="large material-icons default-text">menu</i></a>
                     </div>
                 </div>
-
                 <!-- Side Nav -->
                 <ul id="slide-out" class="side-nav">
                     <li class="no-padding">
@@ -32,51 +34,180 @@
                         </div>
                     </li>
                     <li><a href="../index.html">Home</a></li>
+                    <li><a href="project-background.html">Project Background</a></li>
                     <li><a href="collaboration.html">Collaboration</a></li>
                     <li class="no-padding">
                         <ul class="collapsible collapsible-accordion">
                             <li>
-                                <a class="collapsible-header">Documentation</a>
+                                <a class="collapsible-header">Development<i class="material-icons">expand_more</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="documentation.html">1</a></li>
-                                        <li><a href="documentation.html">2</a></li>
-                                        <li><a href="documentation.html">3</a></li>
-                                        <li><a href="documentation.html">4</a></li>
+                                        <li><a href="design.html">Design</a></li>
+                                        <li><a href="diagram.html">Architectural Diagrams</a></li>
+                                        <li><a href="testing.html">Testing</a></li>
                                     </ul>
                                 </div>
                             </li>
                         </ul>
                     </li>
-                    <li><a href="development.html">Development</a></li> 
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Documentation<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="requirement.html">Requirements</a></li>
+                                        <li><a href="development.html">Development Plan</a></li>
+                                        <li><a href="research.html">Research</a></li>
+                                        <li><a href="prototypes.html">Prototypes</a></li>
+                                        <li><a href="manuals.html">Manuals</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="no-padding">
+                        <ul class="collapsible collapsible-accordion">
+                            <li>
+                                <a class="collapsible-header">Management<i class="material-icons">expand_more</i></a>
+                                <div class="collapsible-body">
+                                    <ul>
+                                        <li><a href="pr-management.html">Management</a></li>
+                                        <li><a href="packages.html">Work Packages</a></li>
+                                        <li><a href="reports.html">Reports</a></li>
+                                        <li><a href="repo.html">Repositories</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
                     <li><a href="forum.html">Forum</a></li>
                     <li><a href="about-us.html">About Us</a></li>
                 </ul>
-
-
             </nav>
         </div>
     </header>
     <main>
         <div class="section default-back">
             <div class="container">
-                <h4 class="white-text">About Us</h4>
-                <p class="white-text">Here is some information about our team and our clients</p>
+                <div class="row">
+                    <h4 class="white-text">About Us</h4>
+                </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col s12 m9 l10">
+                <div id="team" class="section no-pad-bot scrollspy">
+                    <div class="container">
+                        <h5>Meet the Team</h5>
+                        <h5 class="thin">Team 15</h5>
+                        <div class="card grey lighten-5 z-depth-1">
+                            <div class="row ">
+                                <div class="col s2 avatar-card hide-on-med-and-down valign-wrapper">
+                                    <img src="../media/henry.jpg" alt="" class=" avatar circle responsive-img">
+                                </div>
+                                <div class="col s10">
+                                    <div class="container">
+                                        <span><blockquote>Henry Mortimer</blockquote></span>
+                                        <p><a href="mailto:henry@morti.plus.com">henry@morti.plus.com</a>
+                                            <br>Roles: Project Lead. Client Liaison, Infrastructure Lead
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card grey lighten-5 z-depth-1">
+                            <div class="row ">
+                                <div class="col s2 avatar-card hide-on-med-and-down valign-wrapper">
+                                    <img src="../media/mingqian.jpg" alt="" class=" avatar circle responsive-img">
+                                </div>
+                                <div class="col s10">
+                                    <div class="container">
+                                        <span><blockquote>Mingqian Wang</blockquote></span>
+                                        <p><a href="mailto:mingqian.wang.14@ucl.ac.uk">mingqian.wang.14@ucl.ac.uk</a>
+                                            <br>Roles: Chief Researcher, Integration Lead
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <h5 class="thin">Team 16</h5>
+                        <div class="card grey lighten-5 z-depth-1">
+                            <div class="row ">
+                                <div class="col s2 avatar-card hide-on-med-and-down valign-wrapper">
+                                    <img src="../media/Maddie.jpg" alt="" class=" avatar circle responsive-img">
+                                </div>
+                                <div class="col s10">
+                                    <div class="container">
+                                        <span><blockquote>Madeleine Whitehall</blockquote></span>
+                                        <p><a href="mailto:madeleinewhitehall@hotmail.co.uk">madeleinewhitehall@hotmail.co.uk</a>
+                                            <br>Roles: User Interface Lead, Chief Researcher, Chief Editor
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card grey lighten-5 z-depth-1">
+                            <div class="row ">
+                                <div class="col s2 avatar-card hide-on-med-and-down valign-wrapper">
+                                    <img src="../media/Sri.jpg" alt="" class=" avatar circle responsive-img">
+                                </div>
+                                <div class="col s10">
+                                    <div class="container">
+                                        <span><blockquote>Srikrishna Datla</blockquote></span>
+                                        <p><a href="mailto:sri_dalta@live.co.uk">sri_dalta@live.co.uk</a>
+                                            <br>Roles: Project Lead, Client Liaison, Technical Lead, Database Designer
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div id="client" class="section no-pad-bot scrollspy">
+                    <div class="container">
+                        <h5>Clients</h5>
+                        <div class="collection">
+                            <a href="http://www.cities.io/" class="collection-item">
+                                <img src="../media/clients/ICRI_logo.png" alt="" class="responsive-img">
+                                <span class="title"><h5>Intel Collaborative Research Institute</h5></span>
+                                <p class="black-text">Founded in 1968, Intel is one of the largest american multinational manufacturers of a range of advanced internal computer circuitry. Intel has been assisting in this project by providing access to the Intel Smart Citizen API, a multi sensor arduino board that gets the current light, noise and air quality levels from its sensors.
+                                </p>
+                            </a>
+                            <a href="http://research.microsoft.com/en-us/" class="collection-item">
+                                <img src="../media/clients/msr_logo_black.png" alt="" class="responsive-img">
+                                <span class="title"><h5>Microsoft Research</h5></span>
+                                <p class="black-text">Microsoft Research is the research division of Microsoft, aiming to be at the forefront of technology and solve difficult real world problems with state of the art technologies.
+                                </p>
+                            </a>
+                            <a href="http://www.engineering.ucl.ac.uk/" class="collection-item">
+                                <img src="../media/clients/UCLStandalone.png" alt="" class="responsive-img">
+                                <span class="title"><h5>UCL Engineering</h5></span>
+                                <p class="black-text">We have been partnered with the Physical Computing section of the Computer Science Department in UCL, specifically by Dr Nicolai Marquardt and Steven Houben. They are supervising our project and have provided resources such as the smartwatches and the Intel SmartCitizen board as well as guiding us throughout the development of the project in Term 1.
+                                </p>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col hide-on-small-only m3 l2">
+                <ul class="section table-of-contents">
+                    <li><a href="#team">The Team</a></li>
+                    <li><a href="#client">The Clients</a></li>
+                </ul>
+            </div>
+        </div>
+        </div>
     </main>
-    <footer class="page-footer default-back">
-        <div class="footer-copyright">
+    <footer class="page-footer light-green darken-1">
+        <div class="footer-copyright default-back">
             <div class="container">
                 <div class="row">
-                    <div class="col s4">
-                        <span class="grey-text text-lighten-5">Copyright © 2016 - Srikrishna Datla</span>
+                    <div class="col s6">
+                        <span class="white-text">Copyright © 2016 - Systems Engineering Team 15 & 16</span>
                     </div>
-                    <div class="col s4">
-                        <a href="http://fierce-peak-41091.herokuapp.com/" class="center grey-text text-lighten-4">Link to our API</a>
-                    </div>
-                    <div class="col s4">
-                        <a href="http://www.engineering.ucl.ac.uk/" class="white-text grey-lighten-4 right"></a>
+                    <div class="col s6">
+                        <a href="http://www.engineering.ucl.ac.uk/" class="white-text right">Partnered with UCL Engineering</a>
                     </div>
                 </div>
             </div>
@@ -87,4 +218,5 @@
     <script type="text/javascript" src="../js/materialize.min.js"></script>
     <script type="text/javascript" src="../js/init.js"></script>
 </body>
+
 </html>

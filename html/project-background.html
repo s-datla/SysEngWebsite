@@ -91,90 +91,101 @@
         <div class="section default-back">
             <div class="container">
                 <div class="row">
-                    <h4 class="white-text">Development Plan</h4>
+                    <h4 class="white-text">Why is pollution important?</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
+                <div id="background" class="section scrollspy no-pad-bot">
                     <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <p>Air quality in cities is a constant issue, affecting millions of people worldwide and responsible for many ailments. In London alone, 9,500 people die annually from long-term exposure to air pollution, exceeding expected values by twice the amount. In a recent study undertaken by researchers, two key pollutants were identified as the main offenders: NO<sub>2</sub> and PM2.5 (fine particulates which are less than 2.5 micrometers in diameter).</p>
                     </div>
                 </div>
-                <div id="current" class="section scrollspy">
-                    <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                <div id="background" class="section scrollspy no-pad-bot">
+                    <div class="container  grey lighten-4">
+                        <div class="row valign-wrapper">
+                            <div class="col s6">
+                                <canvas id="myChart" width="100%" height="100%"></canvas>
+                                <p class="center"><b>Emissions of air pollutants in the UK, 1970 to 2014</b></p>
+                            </div>
+                            <div class="col s6 valign">
+                                <p>The line graph on the left displays emissions levels for various pollutants for the UK (units are million tonnes). Due to efforts from various UK bodies to curb the levels of emissisons, we can see a gradual decline in pollution levels of major pollutants. However, in certain urban areas there are still times during the year when emissions are present in high quantities. This information is freely available from multiple sources, but not provided in a simple format for the general public to understand and adapt their daily activities to.</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <div id="future" class="section scrollspy">
+                <div id="background" class="section scrollspy no-pad-bot">
                     <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <p>There is an opportunity to provide an easy to use application that can achieve this task and assist users in modifying their behavious based on pollution statistics in their current location. For this reason, we have been tasked by the Intel Collaborative Research Institue, Microsoft Research, and UCL Engineering to design and develop such as system.
+                        </p>
+                    </div>
+                </div>
+                <div id="brief" class="section scrollspy no-pad-bot">
+                    <div class="container">
+                        <h5>Project Brief</h5>
+                        <p>Our project brief is to design and develop a city pollution visualisation app for smartwatches that allows users to view key pollution statistics about their current location that may assist in decision making.</p>
+                    </div>
+                </div>
+                <div id="initial" class="section scrollspy no-pad-bot">
+                    <div class="container grey lighten-4">
+                        <h5>Initial Requirements - MoSCoW</h5>
+                        <p>Based on initial meetings with our client, we identified some simple MoSCoW requirements that were requested for our system.</p>
+                        <h5 class="thin">Must</h5>
+                        <ul class="browser-default container">
+                            <li>
+                                Use 3 pollution data sets updated at different rates ie live, daily, yearly
+                            </li>
+                            <li>Display data visually on a smartwatch</li>
+                            <li>
+                                Have a general view and a detailed view for each type of data
+                            </li>
+                            <li>Interact with an android app</li>
+                            <li>
+                                Must update as the user moves round the city and periodically or when the user requests a refresh
+                            </li>
+                            <li>Have a clear simple UI</li>
+                        </ul>
+                        <h5 class="thin">Should</h5>
+                        <ul class="browser-default container">
+                            <li></li>
+                            <li>
+                                Have our own database to consolidate all other data sources into
+                            </li>
+                            <li>
+                                Send notifications to users based on air quality and their quality preferences
+                            </li>
+                            <li>Have synchronous and asynchronous connection to database</li>
+                            <li>Store the last set of data offline in the app</li>
+                            <li>Have clearly defined zones for the city</li>
+                        </ul>
+                        <h5 class="thin">Could</h5>
+                        <ul class="browser-default container">
+                            <li>Include social data eg twitter posts or facebook etc.</li>
+                            <li>Include traffic data</li>
+                            <li>Allow user to select which information they want to display</li>
+                        </ul>
+                        <h5 class="thin">Would</h5>
+                        <ul class="browser-default container">
+                            <li>Extend for use in other cities</li>
+                            <li>
+                                Extend to a fully fledged android or web app for visualisations as well
+                            </li>
+                            <li>
+                                Develop api for our database so others can use the data we have consolidated
+                            </li>
+                            <li>Expand the number of data sources we are using to</li>
+                        </ul>
                     </div>
                 </div>
             </div>
             <div class="col hide-on-small-only m3 l2">
                 <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
+                    <li><a href="#background">Project Setting</a></li>
+                    <li><a href="#brief">Project Brief</a></li>
+                    <li><a href="#initial">Initial Requirements</a></li>
                 </ul>
             </div>
-        </div>
         </div>
     </main>
     <footer class="page-footer light-green darken-1">
@@ -194,7 +205,9 @@
     <!-- Imports : JavaScript -->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="../js/materialize.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.0.0/Chart.js"></script>
     <script type="text/javascript" src="../js/init.js"></script>
+    <script type="text/javascript" src="../js/chart.js"></script>
 </body>
 
 </html>
