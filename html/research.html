@@ -42,7 +42,7 @@
                                 <a class="collapsible-header">Development<i class="material-icons">expand_more</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="design.html">Design</a></li>
+                                        <li><a href="design.html">Design Patterns</a></li>
                                         <li><a href="diagram.html">Architectural Diagrams</a></li>
                                         <li><a href="testing.html">Testing</a></li>
                                     </ul>
@@ -76,6 +76,7 @@
                                         <li><a href="packages.html">Work Packages</a></li>
                                         <li><a href="reports.html">Reports</a></li>
                                         <li><a href="repo.html">Repositories</a></li>
+                                        <li><a href="references.html">References</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -91,93 +92,114 @@
         <div class="section default-back">
             <div class="container">
                 <div class="row">
-                    <h4 class="white-text">Research</h4>
+                    <h4 class="white-text">Resarch Documentation</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
+                <div id="dataset" class="section scrollspy">
                     <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>Datasets Research</h5>
+
+                        <p>Our intial research revolved around the open source datasets available to use for the app, and we produced the following documentation:</p>
+                            <iframe src="https://docs.google.com/document/d/1M9yTj22eCtYQZTxIlQuN0-8bJN5Oz2cTI6RKFpdgIgQ/pub?embedded=true" width="100%" height="400px"></iframe>
+                        <p>We only looked into open source datasets available as we wanted to find datasets that were not difficult to access. Another criteria for selection was the relevance of the dataset, with our priorities on detailed Air quality statistics as well as location based data as our smartwatch app will rely on updates when entering a new zones within London.</p>
+                        <p>Our initial conclusion from this research was three chosen datasets:</p>
+                        <ul class="browser-default">
+                            <li>London Air API - Provides Hourly and Weekly detailed updates on air pollution for all zones within London (JSON / XML)</li>
+                            <li>Intel Smart Citizen API - Provides Live updates on air, light and noise pollution from a variety of Smart Citizen devices located around London (JSON / XML)</li>
+                            <li>Data.Gov.UK - Provides Yearly updates on air and social ( e.g. Crime) pollution for all zones in London XML / PDF / Excel)</li>
+                        </ul>
+                        <p>However, following some attempts to implement the Data.Gov.UK dataset, we found difficulties in easily parsing and transmitting the information to the API. This made us reconsider our choices for the third dataset, and after some further research we decided on OpenAQ - an open source pollution dataset that covers many major cities around the globe providing</p>
                     </div>
                 </div>
-                <div id="current" class="section scrollspy">
+                <div id="technologies" class="section scrollspy">
                     <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>Technologies</h5>
+                        <p>The following technologies have been selected by our team to be used for elements of our project: Java for the Smartwatch app and smartphone app programming, Node JS for the backend API, MongoDB for the data storage for the pollution data, Heroku used to host the app. We have selected 3 data sets for our project that will provide us with a variety of different interval updates and detailed information about pollution types. This decision was made as these were the most relevant pollution data and the frequency of updates were spaced out enough for us to have reliable and relevant data for the user to use with a range of historical and live data.</p>
+                        <img src="../media/info/technologies.png" class="responsive-img hoverable">
+                        <p></p>
                     </div>
                 </div>
-                <div id="future" class="section scrollspy">
+                <div id="hardware" class="section scrollspy">
                     <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>Hardware</h5>
+                        <p>In terms of hardware, we are aiming the app to be used with android smartphones and android wear smartwatch.Another hardware device being used is the Intel Smart Citizen, an Arduino board that contains many sensors to collect data about air, noise and light pollution. We are using this board as we are able to query the sensor values from all Smart Citizen boards within the London area.</p>
+                        <h5 class="thin">Possible Smartwatch Options</h5>
+                        <table class="bordered">
+                            <thead>
+                                <tr>
+                                    <th>Smartwatch</th>
+                                    <th>Details</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Apple iWatch</td>
+                                    <td>
+                                        <ul>
+                                            <li>Square screen</li>
+                                            <li>340x272 pixels</li>
+                                            <li>Expensive (possibly out of budget)</li>
+                                            <li>iOS based, difficult to connect to Android Smartphone</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Samsung Galaxy Gear</td>
+                                    <td>
+                                        <ul>
+                                            <li>Square screen</li>
+                                            <li>360x480 pixels</li>
+                                            <li>Within budget</li>
+                                            <li>
+                                                Android Wear, Java Based, easy to connect to Android Smartphone
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Microsoft Band</td>
+                                    <td>
+                                        <ul>
+                                            <li>Square screen</li>
+                                            <li>320x128 pixels</li>
+                                            <li>Within budget</li>
+                                            <li>
+                                                Small display size, may be difficult to produce visualisations for that size
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sony Smartwatch 3</td>
+                                    <td>
+                                        <ul>
+                                            <li>Square screen</li>
+                                            <li>320x320 pixels</li>
+                                            <li>Within budget</li>
+                                            <li>
+                                                Android Wear, Java Based, easy to connect to Android Smartphone
+                                            </li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="col hide-on-small-only m3 l2">
                 <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
+                    <li><a href="#dataset">Datasets Research</a></li>
+                    <li><a href="#technologies">Technologies Research</a></li>
+                    <li><a href="#hardware">Hardware Research</a></li>
                 </ul>
             </div>
         </div>
-        </div>
     </main>
-    <footer class="page-footer light-green darken-1">
+    <footer class="page-footer default-back">
         <div class="footer-copyright default-back">
             <div class="container">
                 <div class="row">

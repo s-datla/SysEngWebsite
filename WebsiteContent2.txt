@@ -1,6 +1,6 @@
 Website Content:
 
-1 : Main Homepage - Main page with product features, Video of the final proof of concept application/system (this should show how it is set up and used, demonstrating its functionality; it is not a video of your April 27th presentation)
+1 : Main Homepage
 
 Heading : Project Brief
 
@@ -66,38 +66,34 @@ p: There is an opportunity to provide an easy to use application that can achiev
 
 3 : Collaboration
 
-Heading: 
+Heading: Future Development
+p: Despite fulfilling all primary requirements we look to future development to open up additional opportunties for the system.
 
-4.1 : Design
+p: The current system is centred around London due to our clients requirements, but this could be expanded to include areas beyond the capital. Potential datasets can be found from around the world (the OpenAQ dataset we used is an example) and combining these datasets into a refined schema may prove useful in expanding reaches of the schema.
+
+The project could be extended to other platforms. Android was selected for this project as this was the easiest platform to develop for and had the widest range of devices for us to test with, but future development could centre around other smartwatches (e.g. Apple Watch) or activity trackers (e.g. FitBit, Withings).
+
+Considering the large amount of pollution statistics being fed into the current system, the stored API data could also be analysed for patterns which could be useful in pollution research. Analytics can also be utilised by users to find pollution statistics about areas well beyond their current environment.
+
+Increasing variety of pollutants in also another possibility that could provide a better representation of the users' surroundings. Due to the modular nature of the backend, it would not be too difficult to plug in another dataset to be introduced to the schema. 
 
 
-Heading : Visualisations
+4.1 : Design Patterns
 
-p: As part of our intial research, our clients requested that we produce 10 - 15 potential visusalisations that could be implemented with detailed explanation of their workings and how we intend the user to work the interface.
-Below are the intial visualisations that we produced with a brief explanation of how they will be implemented:
-
-<iframe src="https://docs.google.com/document/d/1wTqJLBGv-ISDZSbAhzTV8aaBbnQPE9lWESp4H3dPM7c/pub?embedded=true"></iframe>
-
-Heading : Initial Proof of Concept
-
-p: After creating our individual visualisations, we had to decide on a final visualisation that we would actually implement and this is our Proof of Concept. The below images were made in the Android Studio and show the layouts of our individual views for our application.
-
-Home Screen
-<img src="../media/mockUpHomePage.png" height="254" width="304">
-
-Air Quality Screen
-<img src="../media/mockUpAir.png" height="261" width="284">
-
-Social Pollution Screen
-<img src="../media/mockUpSocial.png" height="265" width="296">
-
-Sound Pollution Screen
-<img src="../media/mockUpSound.png" height="252" width="298">
-
-Traffic Levels Screen
-<img src="../media/mockUpTraffic.png" height="250" width="283">
 
 4.2 : Architectural Diagrams
+
+Heading : Initial Project Overview Diagram
+
+<img src="../media/Product diagram.png">
+
+p: As shown in the diagram, our project attempts to collect data from multiple data source to produce a city pollution app for London. This the basic overview of how technologies are used within our project, with a Node JS API being used to query the data sources and saving the queried results into a MongoDB database. The smartphone makes requests and gets responses from the API in JSON/XML format and this is passed onto the smart watch where data is shown in visualisations for the user.
+
+Heading: Example Update Process
+
+<img src="../media/Data Update Process.png">
+
+Here is a simple example of what we envision the data update process to be for our app with the interaction between technologies.
 
 4.3 : Testing
 
@@ -123,16 +119,59 @@ p: This was tested on a small group of people and each time the results were cor
 If we were to develop this project further we would have to put the app under a much more scrutinous testing system, checking that the UI has a consistent appearance although it may deployed on a large variety of devices. This would include seeing how robust the UI is to different screen sizes and shapes along with its running on different operating systems.
 
 Heading : API Testing
+
 p: Unit testing is done using Mochajs which you can install with 
 npm install -g mocha 
 We also make use of chaijs and the chaihttp plugin but these will be installed as dependencies.
 
 p: To run the tests use mocha Mocha will run all files in the test directory.
+The outputted result will displayed as below:
 
+(API TESTING IMAGE)
+
+p: The testing undertaken uses dummy data (shown below) and tests the functionality of the multiple requests avaiable from the API as well as the standardizing functions used in the schema written to combine the datasets that feed into the program. We used mocha and chai for testing, mocha is responsible for running the tests and the server, has functions that are run before and after tests where we populated the testing database with test data. Chai allows you to write tests that read like plain english.
 
 5.1 : Requirements
 
 Heading : Final Requirements 
+
+Must
+The server must use data sets with different update times (e.g. in real time, hourly, monthly) FUNCTIONAL
+The smartwatch must display the pollution data FUNCTIONAL
+The smartwatch must have an intuitive and clear UI NONFUNCTIONAL
+The smartwatch must have a scalar data view NONFUNCTIONAL
+The smartwatch must have a detailed data view NONFUNCTIONAL
+The smartwatch must interact with the smartphone app FUNCTIONAL
+The smartphone must send requests to the API FUNCTIONAL
+The smartphone must receive data from the API FUNCTIONAL
+The smartphone must request new data when location changes FUNCTIONAL
+The smartphone must be able to send notifications to the smartwatch on a location change FUNCTIONAL
+
+Should
+Should have our own database in which all data is consolidated and stored FUNCTIONAL
+Should have a synchronous connection to database FUNCTIONAL
+Should have an asynchronous connection to database FUNCTIONAL
+The app should store the last set of data received offline FUNCTIONAL
+Should be able to update data upon demand FUNCTIONAL
+The database should have clearly defined zones of the city FUNCTIONAL
+
+
+Could
+  Functional:
+  1.The backend API shall include traffic data in London and the smartwatch app     should visualise those data.
+  2.The smartwatch app shall allow user to search for pollution data of a particular location by using voice command
+
+
+  Non-functional:     
+  1.The smartphone app shall have an better UI that provides detailed visualisations of pollution data 
+  2.The smartphone app shall include information about the effects on health of each pollutants 
+  3.The smartphone app shall cache pollution data when the device is connected to wifi to reduce data usage.
+
+
+Would
+The project would extend to other cities FUNCTIONAL
+The API would include more data sources FUNCTIONAL
+The database would have developed API allowing others to use it FUNCTIONAL
 
 Heading : Initial Requirements - MoSCoW
 
@@ -331,6 +370,133 @@ p: Based on the availability of the researched smartwatches and the prices, we h
 
 5.4 : Prototypes
 
+Heading : Initial Coding Tests
+
+Sub-Heading : Parsing JSON Data
+
+p: A Java Class that attempts to parse JSON data requested from the London Air API.
+
+code: import java.io.FileReader;
+
+import javax.json.JsonObject;
+import javax.json.Json;
+import javax.json.JsonReader;
+import javax.json.JsonStructure;
+import javax.json.JsonArray;
+
+import java.net.URL;
+import java.io.InputStream;
+
+
+public class Test
+{
+    public void getData() throws Exception
+    {
+        String url = "http://api.erg.kcl.ac.uk/AirQuality/Annual/Map/Json";
+        URL data_url = new URL(url);
+        InputStream is = data_url.openStream();
+        JsonReader rdr = Json.createReader(is);
+        
+        JsonObject jsonfile = rdr.readObject();
+        JsonObject maps = jsonfile.getJsonObject("Maps");
+        JsonArray map = maps.getJsonArray("Map");
+        for(JsonObject result : map.getValuesAs(JsonObject.class))
+        {
+            System.out.print(result.getString("@SpeciesCode") + " ");
+        }
+        
+    }
+    
+    public static void main(String[] args) throws Exception 
+    {
+        Test newTest = new Test();
+        newTest.getData();
+    }
+    
+    
+}
+
+Sub-Heading : Mobile Background Listener
+
+p: This implemented listener attempts to communicate between the smartwatch and smartphone by sending and retrieving a DataMap object.
+
+code: package com.example.sherl_000.weartest_dataitem;
+
+import android.content.Intent;
+import android.util.Log;
+
+import com.google.android.gms.wearable.DataEvent;
+import com.google.android.gms.wearable.DataEventBuffer;
+import com.google.android.gms.wearable.DataMap;
+import com.google.android.gms.wearable.DataMapItem;
+import com.google.android.gms.wearable.MessageEvent;
+import com.google.android.gms.wearable.WearableListenerService;
+
+/**
+ * Created by sherl_000 on 2015/12/1.
+ */
+public class ListenerService extends WearableListenerService
+{
+    public static final String TAG = "MyDataMap";
+    public static final String WEARABLE_DATA_PATH = "/wearable/data/path";
+
+
+    @Override
+    public void onDataChanged(DataEventBuffer dataEvents)
+    {
+        DataMap dataMap;
+        for(DataEvent dataEvent:dataEvents)
+        {
+            if(dataEvent.getType() == DataEvent.TYPE_CHANGED)
+            {
+                String path = dataEvent.getDataItem().getUri().getPath();
+                if (path.equalsIgnoreCase(WEARABLE_DATA_PATH))
+                {
+                    dataMap = DataMapItem.fromDataItem(dataEvent.getDataItem()).getDataMap();
+                    Log.v(TAG, "DataMap received on Wearable Device" + dataMap);
+
+                    Intent startIntent = new Intent(this, MainActivity.class);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    startIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    String[] myArray = new String[2];
+                    myArray[0] = String.valueOf(dataMap.getLong("time"));
+                    myArray[1] = dataMap.getString("message");
+
+                    startIntent.putExtra("dataMap", myArray);
+                    startActivity(startIntent);
+                }
+            }
+        }
+    }
+
+}
+
+Heading : Visualisations
+
+p: As part of our intial research, our clients requested that we produce 10 - 15 potential visusalisations that could be implemented with detailed explanation of their workings and how we intend the user to work the interface.
+Below are the intial visualisations that we produced with a brief explanation of how they will be implemented:
+
+<iframe src="https://docs.google.com/document/d/1wTqJLBGv-ISDZSbAhzTV8aaBbnQPE9lWESp4H3dPM7c/pub?embedded=true"></iframe>
+
+Heading : Initial Proof of Concept
+
+p: After creating our individual visualisations, we had to decide on a final visualisation that we would actually implement and this is our Proof of Concept. The below images were made in the Android Studio and show the layouts of our individual views for our application.
+
+Home Screen
+<img src="../media/mockUpHomePage.png" height="254" width="304">
+
+Air Quality Screen
+<img src="../media/mockUpAir.png" height="261" width="284">
+
+Social Pollution Screen
+<img src="../media/mockUpSocial.png" height="265" width="296">
+
+Sound Pollution Screen
+<img src="../media/mockUpSound.png" height="252" width="298">
+
+Traffic Levels Screen
+<img src="../media/mockUpTraffic.png" height="250" width="283">
+
 
 5.5 : Manuals
 
@@ -421,6 +587,30 @@ li: Tapping on the pollutant icon at the top of the page will show you the raw d
 li: On the occasion that a certain pollutant has no collected data, the scale will appear empty and the raw value will be replaced with '-'
 To return to the previous page swipe across the screen from left to right.
 
+5.6 : References 
+
+Heading : Project References
+p: Over the course of this project,we have used a plethora of resources, and you can find them here;
+
+Syncing and sending data between smartphone and smart watch
+http://developer.android.com/training/wearables/data-layer/index.html
+
+
+Detecting Location and Location updates:
+http://developer.android.com/training/articles/wear-location-detection.html
+http://developer.android.com/training/location/index.html
+
+Service:
+http://developer.android.com/guide/components/services.html
+
+
+Basic android development:
+Android Programming: The Big Nerd Ranch Guide
+
+Android Smartwatch guide:
+http://www.androidauthority.com/develop-simple-android-wear-app-622043/
+
+
 6.1 : Project Management
 
 Heading: Gantt Chart
@@ -433,7 +623,25 @@ Gantt Chart: <iframe src="https://docs.google.com/spreadsheets/d/1qgLVu2SLwC4p-K
 
 Heading : Work Packages 
 
-p: During the initial stages of the project, we decided on dividing the team  based on our preferred roles and where our individual strengths lie. After 
+p: During the initial stages of the project, we decided on dividing the team  based on our preferred roles and where our individual strengths lie. After discussing as a group, we split our team into backend and frontend teams. The following work packages reflect the nature of our division in the project but also includes packages we have completed as a group
+
+thead: Work Package Completed, Contributors
+tr: 
+General - User Interface Visualisation Final Proposal : Henry, Madeleine, Mingqian, Srikrishna
+Backend - Datasets Retrieval : Henry, Srikrishna
+Backend - Schema Collation : Srikrishna
+Backend - Heroku App Deployment : Henry, Srikrishna
+Backend - MongoDB storage and retrieval : Henry, Srikrishna
+Backend - Multiple Querying URLs : Henry
+Backend - Mocha & Chai Testing : Henry
+Frontend - Android Smartwatch User Interface : Madeleine, Mingqian
+Frontend - Android Smartwatch App Functionality : Madeleine
+Frontend - Android Smartphone Background Service : Mingqian
+Frontend - Android Smartwatch Service API requests : Mingqian
+Frontend -  Android Smartwatch & Smartphone pairing : Madeleine, Mingqian
+Frontend - Manual Testing : Madeleine, Mingqian
+General - Systems Integration : Henry, Madeleine, Mingqian, Srikrishna
+General - System Documentation : Henry, Madeleine, Mingqian, Srikrishna
 
 6.3 : Reports
 
@@ -642,20 +850,4 @@ p: We have been partnered with the Physical Computing section of the Computer Sc
 
 tr: Microsoft Research
 p: Microsoft Research is the research division of Microsoft, aiming to be at the forefront of technology and solve difficult real world problems with state of the art technologies.
-
-
-3 : Collaboration Page - SDK/collaboration opportunities for further development
-
-Heading: Current Development
-
-p: Based on the final requirements we followed, we have implemented the following elements of the system:
-p: 
-
-4 : Development Page - Final requirements identified for the final proof of concept, Development plan, iterations and forks in prototypes, Architectural diagrams
-Technical achievements, implementation details, use of design patterns
-Management of the project including work packages completed between the team members
-Testing and evaluation of the product solution
-
-
-5 : Documentation Page - Referenced materials cited and examples/trials made, System manual and user manual
 

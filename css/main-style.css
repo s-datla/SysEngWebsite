@@ -68,8 +68,14 @@ blockquote {
 	position: fixed;
 }
 
+ul.browser-default {
+	list-style: initial;
+	margin: initial;
+	padding: 0 0 0 40px;
+}
+
 ul.browser-default li {
-	list-style-type: initial;
+	list-style: initial;
 }
 
 .avatar {
@@ -84,9 +90,9 @@ ul.browser-default li {
 }
 
 .forum {
-    display: block;       /* iframes are inline by default */
+    display: block;       
     background: #000;
-    border: none;         /* Reset default border */
-    height: 140vh;        /* Viewport-relative units */
+    border: none;         
+    height: 140vh;        
     width: 85vw;
 }

@@ -42,7 +42,7 @@
                                 <a class="collapsible-header">Development<i class="material-icons">expand_more</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="design.html">Design</a></li>
+                                        <li><a href="design.html">Design Patterns</a></li>
                                         <li><a href="diagram.html">Architectural Diagrams</a></li>
                                         <li><a href="testing.html">Testing</a></li>
                                     </ul>
@@ -76,6 +76,7 @@
                                         <li><a href="packages.html">Work Packages</a></li>
                                         <li><a href="reports.html">Reports</a></li>
                                         <li><a href="repo.html">Repositories</a></li>
+                                        <li><a href="references.html">References</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -97,87 +98,50 @@
         </div>
         <div class="row">
             <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
+                <div id="smartwatch" class="section scrollspy">
                     <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>Smartwatch Application Testing </h5>
+                        <p>When it came to testing the UI, as it was mostly a visual confirmation we decided to use manual testing. This included going through each process of the wearable app on the Android Studio ADK and confirming that the response messages that we added into the code corresponded to the actions that were undertaken. For each button pressed a "visual status" was displayed onto the Android Monitor allowing us to ensure that the buttons were doing the correct thing. Some screenshots of our UI testing can be seen below.</p>
+                        <h5 class="thin">Android Studio Testing</h5>
+                        <img src="../media/docs/smartwatch-test/image1.png" class="responsive-img hoverable">
+                        <img src="../media/docs/smartwatch-test/image2.png" class="responsive-img hoverable">
+                        <img src="../media/docs/smartwatch-test/image3.png" class="responsive-img hoverable">
+                        <img src="../media/docs/smartwatch-test/image4.png" class="responsive-img hoverable">
+                        <p>We also tested it on potential users, using an Android wear device. We asked each person who tested it to go through a series of steps and if each step implemented the correct UI change the results appeared to be working as planned.</p>
+                        <h5 class="thin">Manual Testing Method</h5>
+                        <p><b>Written after each step is the ideal outcome</b></p>
+                        <p>1. Open the City Data Visualiser</p>
+                        <p>2. Tap on each of the none greyed icons in turn (Their corresponding scale pages should become visible)</p>
+                        <p>3. For each scale page, tap the pollutant icon at the head of the page (The raw data values should become visible)</p>
+                        <p>4. When on a pollutant page, swipe across the screen from left to right (This should take you back to the previous page)</p>
+                        <p>5. Close the app and change your location slightly e.g. walk 10m away from your current point (This will count as a location change, new data will be sent and the app will reopen automatically)</p>
+                        <p>This was tested on a small group of people and each time the results were correct and consistent If we were to develop this project further we would have to put the app under a much more scrutinous testing system, checking that the UI has a consistent appearance although it may deployed on a large variety of devices. This would include seeing how robust the UI is to different screen sizes and shapes along with its running on different operating systems.</p>
                     </div>
                 </div>
-                <div id="current" class="section scrollspy">
+                <div id="api" class="section scrollspy">
                     <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="future" class="section scrollspy">
-                    <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>API Testing</h5>
+                        <p>Unit testing is done using Mochajs which you can install with:</p>
+                        <div class="grey lighten-3">
+                        <code>npm install -g mocha </code>
+                        </div>
+                        <p>We also make use of chaijs and the chaihttp plugin but these will be installed as dependencies.</p>
+                        <p>To run the tests use mocha Mocha will run all files in the test directory. The outputted result will displayed as below:</p>
+                        <img src="../media/docs/api-test/mocha-test.png" class="responsive-img hoverable">
+                        <p>The testing undertaken uses dummy data (shown below) and tests the functionality of the multiple requests avaiable from the API as well as the standardizing functions used in the schema written to combine the datasets that feed into the program. We used mocha and chai for testing, mocha is responsible for running the tests and the server, has functions that are run before and after tests where we populated the testing database with test data. Chai allows you to write tests that read like plain english.</p>
                     </div>
                 </div>
             </div>
             <div class="col hide-on-small-only m3 l2">
                 <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
+                    <li><a href="#smartwatch">Smartwatch Testing</a></li>
+                    <li><a href="#api">API Testing</a></li>
                 </ul>
             </div>
         </div>
         </div>
     </main>
-    <footer class="page-footer light-green darken-1">
+    <footer class="page-footer default-back">
         <div class="footer-copyright default-back">
             <div class="container">
                 <div class="row">

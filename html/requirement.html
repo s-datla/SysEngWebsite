@@ -42,7 +42,7 @@
                                 <a class="collapsible-header">Development<i class="material-icons">expand_more</i></a>
                                 <div class="collapsible-body">
                                     <ul>
-                                        <li><a href="design.html">Design</a></li>
+                                        <li><a href="design.html">Design Patterns</a></li>
                                         <li><a href="diagram.html">Architectural Diagrams</a></li>
                                         <li><a href="testing.html">Testing</a></li>
                                     </ul>
@@ -76,6 +76,7 @@
                                         <li><a href="packages.html">Work Packages</a></li>
                                         <li><a href="reports.html">Reports</a></li>
                                         <li><a href="repo.html">Repositories</a></li>
+                                        <li><a href="references.html">References</a></li>
                                     </ul>
                                 </div>
                             </li>
@@ -97,7 +98,7 @@
         </div>
         <div class="row">
             <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
+                <div id="final" class="section scrollspy">
                     <div class="container">
                         <h5>Intro</h5>
                         <br>
@@ -113,29 +114,6 @@
                         <br>
                         <br>
                         <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="current" class="section scrollspy">
-                    <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <br>
                         <br>
                         <br>
@@ -143,41 +121,303 @@
                         <br>
                     </div>
                 </div>
-                <div id="future" class="section scrollspy">
+                <div id="initial" class="section scrollspy no-pad-bot">
+                    <div class="container grey lighten-4">
+                        <h5>Initial Requirements - MoSCoW</h5>
+                        <p>Based on initial meetings with our client, we identified some simple MoSCoW requirements that were requested for our system.</p>
+                        <h5 class="thin">Must</h5>
+                        <ul class="browser-default container">
+                            <li>
+                                Use 3 pollution data sets updated at different rates ie live, daily, yearly
+                            </li>
+                            <li>Display data visually on a smartwatch</li>
+                            <li>
+                                Have a general view and a detailed view for each type of data
+                            </li>
+                            <li>Interact with an android app</li>
+                            <li>
+                                Must update as the user moves round the city and periodically or when the user requests a refresh
+                            </li>
+                            <li>Have a clear simple UI</li>
+                        </ul>
+                        <h5 class="thin">Should</h5>
+                        <ul class="browser-default container">
+                            <li></li>
+                            <li>
+                                Have our own database to consolidate all other data sources into
+                            </li>
+                            <li>
+                                Send notifications to users based on air quality and their quality preferences
+                            </li>
+                            <li>Have synchronous and asynchronous connection to database</li>
+                            <li>Store the last set of data offline in the app</li>
+                            <li>Have clearly defined zones for the city</li>
+                        </ul>
+                        <h5 class="thin">Could</h5>
+                        <ul class="browser-default container">
+                            <li>Include social data eg twitter posts or facebook etc.</li>
+                            <li>Include traffic data</li>
+                            <li>Allow user to select which information they want to display</li>
+                        </ul>
+                        <h5 class="thin">Would</h5>
+                        <ul class="browser-default container">
+                            <li>Extend for use in other cities</li>
+                            <li>
+                                Extend to a fully fledged android or web app for visualisations as well
+                            </li>
+                            <li>
+                                Develop api for our database so others can use the data we have consolidated
+                            </li>
+                            <li>Expand the number of data sources we are using to</li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="usecase" class="section scrollspy no-pad-bot">
                     <div class="container">
-                        <h5>Future Plans</h5>
+                        <h5>Use Cases</h5>
+                        <div class="divider"></div>
+                        <br>
+                        <h5 class="thin">Use Case 1: Recieving Data Updates</h5>
+                        <table class="bordered highlight">
+                            <tr>
+                                <th data-field="name">Name</th>
+                                <td>StartReceivingDataUpdates</td>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <td>UC1</td>
+                            </tr>
+                            <tr>
+                                <th data-field="brief">Brief Description</th>
+                                <td>The user starts the app to constantly receive air quality data based on location change</td>
+                            </tr>
+                            <tr>
+                                <th data-field="primary">Primary Actor</th>
+                                <td>User</td>
+                            </tr>
+                            <tr>
+                                <th data-field="secondary">Secondary Actor</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="precon">Preconditions</th>
+                                <td>The phone is connected to the Internet</td>
+                            </tr>
+                            <tr>
+                                <th data-field="mainflows">Main Flow</th>
+                                <td>
+                                    <p>1) The user opens the app on the smartphone.</p>
+                                    <p>2) The app starts the data service that runs in the background and constantly send data to the smartwatch</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-field="postcon">Post Conditions</th>
+                                <td>The data service is started</td>
+                            </tr>
+                            <tr>
+                                <th data-field="altflows">Alterative Flows</th>
+                                <td>None</td>
+                            </tr>
+                        </table>
                         <br>
                         <br>
                         <br>
+                        <h5 class="thin">User Case 2: User Checking Air Quality</h5>
+                        <table class="bordered highlight">
+                            <tr>
+                                <th data-field="name">Name</th>
+                                <td>CheckAirQuality</td>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <td>UC2</td>
+                            </tr>
+                            <tr>
+                                <th data-field="brief">Brief Description</th>
+                                <td>The user uses the app to check the air quality of current location</td>
+                            </tr>
+                            <tr>
+                                <th data-field="primary">Primary Actor</th>
+                                <td>User</td>
+                            </tr>
+                            <tr>
+                                <th data-field="secondary">Secondary Actor</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="precon">Preconditions</th>
+                                <td>The phone is connected to the Internet and the data service is running</td>
+                            </tr>
+                            <tr>
+                                <th data-field="mainflows">Main Flow</th>
+                                <td>
+                                    <p>1) The app displays the main menu which contains for icons on the smartwatch</p>
+                                    <p> 2) The user clicks the Air icon</p>
+                                    <p> 3) The smartwatch displays the data for each pollutants in the form of coloured blocks</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-field="postcon">Post Conditions</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="altflows">Alterative Flows</th>
+                                <td>None</td>
+                            </tr>
+                        </table>
                         <br>
                         <br>
                         <br>
+                        <h5 class="thin">Use Case 3: Checking Raw Values</h5>
+                        <table>
+                            <tr>
+                                <th data-field="name">Name</th>
+                                <td>CheckAirQualityRawData</td>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <td>UC3</td>
+                            </tr>
+                            <tr>
+                                <th data-field="brief">Brief Description</th>
+                                <td>The user uses the app to check the raw values of different air pollutants in current location</td>
+                            </tr>
+                            <tr>
+                                <th data-field="primary">Primary Actor</th>
+                                <td>User</td>
+                            </tr>
+                            <tr>
+                                <th data-field="secondary">Secondary Actor</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="precon">Preconditions</th>
+                                <td>The phone is connected to the Internet and the data service is running</td>
+                            </tr>
+                            <tr>
+                                <th data-field="mainflows">Main Flow</th>
+                                <td>
+                                    <p>1) The app displays the main menu which contains for icons on the smartwatch</p>
+                                    <p> 2) The user clicks the Air icon</p>
+                                    <p> 3) The smartwatch displays the data for each pollutants in the form of coloured blocks</p>
+                                    <p> 4) The user clicks the top bar of the current view</p>
+                                    <p> 5) The system displays the raw value for each air pollutant</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-field="postcon">Post Conditions</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="altflows">Alterative Flows</th>
+                                <td>None</td>
+                            </tr>
+                        </table>
                         <br>
                         <br>
                         <br>
+                        <h5 class="thin">Use Case 4: Halting Data Update Retrieval</h5>
+                        <table>
+                            <tr>
+                                <th data-field="name">Name</th>
+                                <td>StopReceivingDataUpdate</td>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <td>UC4</td>
+                            </tr>
+                            <tr>
+                                <th data-field="brief">Brief Description</th>
+                                <td>The user decides to stop receiving data updates</td>
+                            </tr>
+                            <tr>
+                                <th data-field="primary">Primary Actor</th>
+                                <td>User</td>
+                            </tr>
+                            <tr>
+                                <th data-field="secondary">Secondary Actor</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="precon">Preconditions</th>
+                                <td>The phone is connected to the Internet and the data service is running</td>
+                            </tr>
+                            <tr>
+                                <th data-field="mainflows">Main Flow</th>
+                                <td>
+                                    <p>1) The user opens the app on the smartphone</p>
+                                    <p> 2) The user clicks the stop update button</p>
+                                    <p> 3) The app stops the data service that has been running in the background</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-field="postcon">Post Conditions</th>
+                                <td>The data service is stopped and the smartwatch will no longer receive data from the phone</td>
+                            </tr>
+                            <tr>
+                                <th data-field="altflows">Alterative Flows</th>
+                                <td>None</td>
+                            </tr>
+                        </table>
                         <br>
                         <br>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5 class="thin">Use Case 5: Requesting API Data</h5>
+                        <table>
+                            <tr>
+                                <th data-field="name">Name</th>
+                                <td>RequestDataFromAPI</td>
+                            </tr>
+                            <tr>
+                                <th>ID</th>
+                                <td>UC5</td>
+                            </tr>
+                            <tr>
+                                <th data-field="brief">Brief Description</th>
+                                <td>The smartphone app requests air quality data from the backend API</td>
+                            </tr>
+                            <tr>
+                                <th data-field="primary">Primary Actor</th>
+                                <td>Smartphone app</td>
+                            </tr>
+                            <tr>
+                                <th data-field="secondary">Secondary Actor</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="precon">Preconditions</th>
+                                <td>The phone is connected to the Internet and the data service is running</td>
+                            </tr>
+                            <tr>
+                                <th data-field="mainflows">Main Flow</th>
+                                <td>
+                                    <p>1) The app detects a location change</p>
+                                    <p> 2) The app make a request with the current coordinates as query parameters to the API</p>
+                                    <p> 3) The API returns a json array that contains all the data with the nearest one as the first element</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <th data-field="postcon">Post Conditions</th>
+                                <td>None</td>
+                            </tr>
+                            <tr>
+                                <th data-field="altflows">Alterative Flows</th>
+                                <td>None</td>
+                            </tr>
+                        </table>
                     </div>
                 </div>
             </div>
             <div class="col hide-on-small-only m3 l2">
                 <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
+                    <li><a href="#final">Final Requirements</a></li>
+                    <li><a href="#initial">Initial Requirements</a></li>
+                    <li><a href="#usecase">Use Cases</a></li>
                 </ul>
             </div>
         </div>
-        </div>
     </main>
-    <footer class="page-footer light-green darken-1">
+    <footer class="page-footer default-back">
         <div class="footer-copyright default-back">
             <div class="container">
                 <div class="row">
