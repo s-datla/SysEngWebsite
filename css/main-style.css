@@ -83,3 +83,10 @@ ul.browser-default li {
 	min-height: 120px;
 }
 
+.forum {
+    display: block;       /* iframes are inline by default */
+    background: #000;
+    border: none;         /* Reset default border */
+    height: 140vh;        /* Viewport-relative units */
+    width: 85vw;
+}
