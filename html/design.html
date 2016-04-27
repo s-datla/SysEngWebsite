@@ -57,7 +57,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="requirement.html">Requirements</a></li>
-                                        <li><a href="development.html">Development Plan</a></li>
+                                        <li><a href="development.html">Iterations</a></li>
                                         <li><a href="research.html">Research</a></li>
                                         <li><a href="prototypes.html">Prototypes</a></li>
                                         <li><a href="manuals.html">Manuals</a></li>
@@ -91,91 +91,51 @@
         <div class="section default-back">
             <div class="container">
                 <div class="row">
-                    <h4 class="white-text">Design</h4>
-                    <p class="white-text">Here are some ideas for how you can contribute to this project in the future!</p>
+                    <h4 class="white-text">Design Patterns</h4>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
-                    <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="current" class="section scrollspy">
-                    <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="future" class="section scrollspy">
-                    <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h5>Design Patterns</h5>
+                    <p>Upon starting this project, our team was adamant that we should adhere to web standards and design patterns as this may assist us in development and future progress. The following design patterns were implemented by our group, provided with their relevant system element and a brief description.</p>
+                    <table class="responsive-table highlight striped bordered">
+                        <thead>
+                            <th>Design Pattern</th>
+                            <th>Description</th>
+                            <th>Relevant System Element</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Extensibility Pattern</td>
+                                <td>This design patterns takes into the consideration the possibility of future growth. When the schema is developed further with new functionality extended, the extensibility pattern will ensure that the system’s core data flow and internal structure will not be affected to such an extent that it will change the system’s behaviour.</td>
+                                <td>Schema</td>
+                            </tr>
+                            <tr>
+                                <td>Chain of Responsibility Pattern</td>
+                                <td>This ensures the prevention of more than one object handling a request. There is a chain of processing objects where each object can handle certain requests.  The requests will travel down the chain of processing objects until it finds one that can handle it.</td>
+                                <td>API Request Handling</td>
+                            </tr>
+                            <tr>
+                                <td>Scheduled Task Pattern</td>
+                                <td>Scheduled task patterns ensure that operations are performed at specific points in the future. The operations are controlled by scheduler object that keeps track of them and ensures they’re achieved. Particularly useful in real-time systems.</td>
+                                <td>Dataset Retrieval</td>
+                            </tr>
+                            <tr>
+                                <td>REST API Pattern</td>
+                                <td>Separating your API into logical resources is a key feature of the REST API design pattern, with these resources being manipulated using specific HTTP requests. This will lead to a well designed API that can easily be understood and used by developers.</td>
+                                <td>Backend API</td>
+                            </tr>
+                            <tr>
+                                <td>MVC Pattern</td>
+                                <td>MVC is Model-View-Controller pattern. Models are templates of data that can only be accessed or edited by controllers. Views are user interface based code that allows access to functions that manipulate data through the assistance of the Controller classes.</td>
+                                <td>Smartwatch Application & Smartphone Background Service</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
-            <div class="col hide-on-small-only m3 l2">
-                <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
-                </ul>
-            </div>
-        </div>
         </div>
     </main>
     <footer class="page-footer light-green darken-1">

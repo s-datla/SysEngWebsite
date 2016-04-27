@@ -2,9 +2,38 @@ Website Content:
 
 1 : Main Homepage
 
-Heading : Project Brief
 
-p: Our project brief is to design and develop a city pollution visualisation app for smartwatches that allows users to view key pollution statistics about their current location that may assist in decision making.
+Heading: Objectives
+
+p: Collect data from open source data sets around London
+Display the data on a wearable device
+
+Heading : Description
+p: The City Data Visualisation Project comprises of 2 elements:
+
+Heading : NodeJS Server API
+
+p: Combines data from three data sources and stores in API
+Multiple possible requests
+Request all data from the API
+Request data a certain distance from a particular point
+Request the nearest data for particular pollutant types
+
+Heading : Smartwatch & Smartphone Visualisation Application
+
+p: Four data types
+Air
+Traffic
+Sound
+Light
+Notification sent on location change
+New data requested upon location change
+User friendly UI
+Colour-coded
+Level scale for each pollutant
+Raw data for each pollutant
+
+
 
 Heading : 
 2 : Project Background
@@ -64,6 +93,10 @@ p: The line graph on the left displays emissions levels for various pollutants f
 
 p: There is an opportunity to provide an easy to use application that can achieve this task and assist users in modifying their behavious based on pollution statistics in their current location. For this reason, we have been tasked by the Intel Collaborative Research Institue, Microsoft Research, and UCL Engineering to design and develop such as system.
 
+Heading : Project Brief
+
+p: Our project brief is to design and develop a city pollution visualisation app for smartwatches that allows users to view key pollution statistics about their current location that may assist in decision making.
+
 3 : Collaboration
 
 Heading: Future Development
@@ -80,6 +113,14 @@ Increasing variety of pollutants in also another possibility that could provide 
 
 4.1 : Design Patterns
 
+Extensibility Pattern - Schema
+This design patterns takes into the consideration the possibility of future growth. When the schema is developed further with new functionality extended, the extensibility pattern will ensure that the system’s core data flow and internal structure will not be affected to such an extent that it will change the system’s behaviour.
+Chain of Responsibility Pattern
+This ensures the prevention of more than one object handling a request. There is a chain of processing objects where each object can handle certain requests.  The requests will travel down the chain of processing objects until it finds one that can handle it.
+Scheduled Task Pattern
+Scheduled task patterns ensure that operations are performed at specific points in the future. The operations are controlled by scheduler object that keeps track of them and ensures they’re achieved. Particularly useful in real-time systems.
+REST API PAttern
+Separating your API into logical resources is a key feature of the REST API design pattern, with these resources being manipulated using specific HTTP requests. This will lead to a well designed API that can easily be understood and used by developers.
 
 4.2 : Architectural Diagrams
 
@@ -275,7 +316,148 @@ Main Flow:
 Postconditions: None
 Alternatie Flows:None
 
-5.2 : Development Plan
+5.2 : Iterations and Forks
+
+Heading : Iterations and Forks
+
+p: During the design process we initally all came up with several designs which
+we then combined and iterated over to produce the final design we used for the
+final version of the app 
+The schema went through several iterations. Initally we had something like
+this: 
+
+{
+    "_id":"56fab1838d45e3a41ac1795d",
+    "deviceID":2276,
+    "datetime":"2015-03-25T20:00:38Z",
+    "data":[{"no2":1},{"co":1}],
+    "loc":{"type":"Point","coordinates":[-0.127758299999982,51.5073509]} 
+}
+
+p: We then decided to remove the deviceId field as not all data sets had this field or had it in a different format e.g siteName. We also changed the data field so that even if a sensor didn't have data about a specific type of pollution it would still be inserted with a null value. We also include more information about the polution like so: 
+
+{
+  "_id":"5702b14be4b4872d5d92b50b",
+  "datetime":"2015-03-25T20:00:38Z",
+  "data":[
+    {
+      "no2":{
+        "value":1,
+        "units":"AirQualityIndex",
+        "raw_value":0.01264,
+        "raw_units":"ppm"
+      }
+    },
+    {
+      "co":{
+        "value":1,
+        "units":"AirQualityIndex",
+        "raw_value":1.97912,
+        "raw_units":"ppm"
+      }
+    },
+    {
+      "light":{
+        "value":55.4,
+        "units":"Lux",
+        "raw_value":55.4,
+        "raw_units":"Lux"
+      }
+    },
+    {
+      "noise":{
+        "value":50,
+        "units":"dB",
+        "raw_value":50,
+        "raw_units":"dB"
+      }
+    },
+    {"no2":null},
+    {"so2":null},
+    {"o3":null},
+    {"pm10":null},
+    {"pm25":null},
+    {"co":null},
+    {"light":null},
+    {"noise":null}
+  ],
+  "loc":{"type":"Point","coordinates":[-0.127758299999982,51.5073509]}}
+ }
+
+p: Finally we changed the data field again by removing taking everything out of
+the array so data could be accessed like this: data.no2 rather than
+data[0].no2 for example. It looks something like this: 
+
+{
+    "_id":"5702b14be4b4872d5d92b50b",
+    "datetime":"2015-03-25T20:00:38Z",
+    "data":{
+        "no2":{
+            "value":1,
+            "units":"AirQualityIndex",
+            "raw_value":0.01264,
+            "raw_units":"ppm"
+        },
+        "co":{
+            "value":1,
+            "units":"AirQualityIndex",
+            "raw_value":1.97912,
+            "raw_units":"ppm"
+        },
+        "light":{
+            "value":55.4,
+            "units":"Lux",
+            "raw_value":55.4,
+            "raw_units":"Lux"
+        },
+        "noise":{
+            "value":50,
+            "units":"dB",
+            "raw_value":50,
+            "raw_units":"dB"
+        },
+        "so2":null,
+        "o3":null,
+        "pm10":null,
+        "pm25":null,
+    },
+    "loc":{
+        "type":"Point",
+        "coordinates":[-0.127758299999982,51.5073509]
+    }
+}
+
+p: We also made changes to the URI scheme for the API over the course of the
+project as we added more requests. Initially we only accepted requests to
+/api/all which could take parameters but as we added more API end points
+/api/all simply showed all the data, /api/all/near took parameters to filter
+data and /api/small only showed the closest data. 
+
+p: The error handling for the API also went through several iterations. Initally
+there was none at all but this was not particularly ideal as it meant the
+requet would just hang on incorrectly formatted requests. We then changed it
+so it would just end the request with an empty response on incorrectly
+formatted
+p: requests but this still gave the user no indication of why the request failed.
+So when then added in an api error html page that would be returned that
+indicted what was wrong with the request. The problem with this though is that
+if the user wasn't making the requests with a browser whatever they are using
+to make the requests wont know how to render the error page. So finally we
+settled an a JSON based response instead.
+
+p: For the front end first of all we built the layout files so visually it matched the finalised UI
+design. Throughout the construction we used dummy data to test as we went.
+Then we added basic functionality bit by bit, starting with implementing
+button actions (from main menu to specific pages, from scale view to detailed
+view). 
+p: Notifications between the phone and the watch were implemented upon the entering
+of a new location. 
+p: Then the scale features were added, both the 1-10 scale on the pollutant page
+and the icon colours on the main menu. 
+The scale on the specific pages had to undergo multiple redesigns in order to
+find a balance between detail and clarity of view.
+p: Finally we linked the UI with the real incoming data, adjusting any features
+accordingly.
 
 5.3 : Research 
 
@@ -376,7 +558,7 @@ Sub-Heading : Parsing JSON Data
 
 p: A Java Class that attempts to parse JSON data requested from the London Air API.
 
-code: import java.io.FileReader;
+import java.io.FileReader;
 
 import javax.json.JsonObject;
 import javax.json.Json;
@@ -420,7 +602,7 @@ Sub-Heading : Mobile Background Listener
 
 p: This implemented listener attempts to communicate between the smartwatch and smartphone by sending and retrieving a DataMap object.
 
-code: package com.example.sherl_000.weartest_dataitem;
+package com.example.sherl_000.weartest_dataitem;
 
 import android.content.Intent;
 import android.util.Log;
@@ -542,7 +724,8 @@ it is then called in app.js in a similar way to here:
 var config = require('./_config');
 var monk = require('monk');
 var db = monk(config.mongoURI[app.get('env')]);
-API docs
+
+Sub-Heading: API docs
 
 p: To generate the API docs first you have to install apidocsjs
 
@@ -587,29 +770,6 @@ li: Tapping on the pollutant icon at the top of the page will show you the raw d
 li: On the occasion that a certain pollutant has no collected data, the scale will appear empty and the raw value will be replaced with '-'
 To return to the previous page swipe across the screen from left to right.
 
-5.6 : References 
-
-Heading : Project References
-p: Over the course of this project,we have used a plethora of resources, and you can find them here;
-
-Syncing and sending data between smartphone and smart watch
-http://developer.android.com/training/wearables/data-layer/index.html
-
-
-Detecting Location and Location updates:
-http://developer.android.com/training/articles/wear-location-detection.html
-http://developer.android.com/training/location/index.html
-
-Service:
-http://developer.android.com/guide/components/services.html
-
-
-Basic android development:
-Android Programming: The Big Nerd Ranch Guide
-
-Android Smartwatch guide:
-http://www.androidauthority.com/develop-simple-android-wear-app-622043/
-
 
 6.1 : Project Management
 
@@ -634,6 +794,7 @@ Backend - Heroku App Deployment : Henry, Srikrishna
 Backend - MongoDB storage and retrieval : Henry, Srikrishna
 Backend - Multiple Querying URLs : Henry
 Backend - Mocha & Chai Testing : Henry
+Backend - Map Visualisations : Henry
 Frontend - Android Smartwatch User Interface : Madeleine, Mingqian
 Frontend - Android Smartwatch App Functionality : Madeleine
 Frontend - Android Smartphone Background Service : Mingqian
@@ -809,6 +970,29 @@ p:
     ├── index.jade
     ├── layout.jade
     └── map.jade
+
+6.5 : References 
+
+Heading : Project References
+p: Over the course of this project,we have used a plethora of resources, and you can find them here;
+
+Syncing and sending data between smartphone and smart watch
+http://developer.android.com/training/wearables/data-layer/index.html
+
+
+Detecting Location and Location updates:
+http://developer.android.com/training/articles/wear-location-detection.html
+http://developer.android.com/training/location/index.html
+
+Service:
+http://developer.android.com/guide/components/services.html
+
+
+Basic android development:
+Android Programming: The Big Nerd Ranch Guide
+
+Android Smartwatch guide:
+http://www.androidauthority.com/develop-simple-android-wear-app-622043/
 
 7 : Forum
 

@@ -57,7 +57,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="requirement.html">Requirements</a></li>
-                                        <li><a href="development.html">Development Plan</a></li>
+                                        <li><a href="development.html">Iterations</a></li>
                                         <li><a href="research.html">Research</a></li>
                                         <li><a href="prototypes.html">Prototypes</a></li>
                                         <li><a href="manuals.html">Manuals</a></li>
@@ -92,90 +92,32 @@
         <div class="section default-back">
             <div class="container">
                 <div class="row">
-                    <h4 class="white-text">Testing Methods</h4>
+                    <h4 class="white-text">Iterations and Forks</h4>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
-                    <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="current" class="section scrollspy">
-                    <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="future" class="section scrollspy">
-                    <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
+        <div class="section">
+            <div class="container">
+                <div class="row">
+                    <h5>Iterations and Forks</h5>
+                    <p>During the design process we initally all came up with several designs which we then combined and iterated over to produce the final design we used for the final version of the app.</p>
+                    <p>The schema went through several iterations. Initally we had something like this:</p>
+                    <img src="../media/docs/iterations/iterations1.png" class="hoverable responsive-img" width="50%">
+                    <p>We then decided to remove the deviceId field as not all data sets had this field or had it in a different format e.g siteName. We also changed the data field so that even if a sensor didn't have data about a specific type of pollution it would still be inserted with a null value. We also include more information about the polution like so: </p>
+                    <img src="../media/docs/iterations/iterations2.png" class="hoverable responsive-img" width="50%">
+                    <p>Finally we changed the data field again by removing taking everything out of the array so data could be accessed like this: data.no2 rather than data[0].no2 for example. It looks something like this:</p>
+                    <img src="../media/docs/iterations/iterations3.png" class="hoverable responsive-img" width="50%">
+                    <p>We also made changes to the URI scheme for the API over the course of the project as we added more requests. Initially we only accepted requests to /api/all which could take parameters but as we added more API end points /api/all simply showed all the data, /api/all/near took parameters to filter data and /api/small only showed the closest data. </p>
+                    <p>The error handling for the API also went through several iterations. Initally there was none at all but this was not particularly ideal as it meant the requet would just hang on incorrectly formatted requests. We then changed it so it would just end the request with an empty response on incorrectly formatted
+                    </p>
+                    <p>Requests but this still gave the user no indication of why the request failed. So when then added in an api error html page that would be returned that indicted what was wrong with the request. The problem with this though is that if the user wasn't making the requests with a browser whatever they are using to make the requests wont know how to render the error page. So finally we settled an a JSON based response instead.</p>
+                    <p>For the front end first of all we built the layout files so visually it matched the finalised UI design. Throughout the construction we used dummy data to test as we went. Then we added basic functionality bit by bit, starting with implementing button actions (from main menu to specific pages, from scale view to detailed view). </p>
+                    <p>Notifications between the phone and the watch were implemented upon the entering of a new location. </p>
+                    <p>Then the scale features were added, both the 1-10 scale on the pollutant page and the icon colours on the main menu. The scale on the specific pages had to undergo multiple redesigns in order to find a balance between detail and clarity of view.</p>
+                    <p>Finally we linked the UI with the real incoming data, adjusting any features accordingly.
+                    </p>
                 </div>
             </div>
-            <div class="col hide-on-small-only m3 l2">
-                <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
-                </ul>
-            </div>
-        </div>
         </div>
     </main>
     <footer class="page-footer default-back">

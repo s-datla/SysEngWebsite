@@ -57,7 +57,7 @@
                                 <div class="collapsible-body">
                                     <ul>
                                         <li><a href="requirement.html">Requirements</a></li>
-                                        <li><a href="development.html">Development Plan</a></li>
+                                        <li><a href="development.html">Iterations</a></li>
                                         <li><a href="research.html">Research</a></li>
                                         <li><a href="prototypes.html">Prototypes</a></li>
                                         <li><a href="manuals.html">Manuals</a></li>
@@ -92,93 +92,85 @@
         <div class="section default-back">
             <div class="container">
                 <div class="row">
-                    <h4 class="white-text">Testing Methods</h4>
+                    <h4 class="white-text">User Manuals</h4>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s12 m9 l10">
-                <div id="intro" class="section scrollspy">
+                <div id="smartwatch" class="section scrollspy">
                     <div class="container">
-                        <h5>Intro</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>    
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>Smartwatch and Smartphone User Manual</h5>
+                        <div class="divider"></div>
+                        <h5 class="thin">Before Getting Started</h5>
+                        <p>Before downloading the City Data Visualiser ensure that your Android phone is paired with your Wear device.</p>
+                        <h5 class="thin">Downloading</h5>
+                        <p>To download the app, simply click the App Icon on an Android store. This will download and install the City Data Visualiser on your Android phone which will then push the application to your paired Wear devices.</p>
+                        <h5 class="thin">Running the City Data Visualiser</h5>
+                        <p>To start using your newly installed Visualiser just follow these simple steps:</p>
+                        <ul class="browser-default">
+                            <li>Open the app on on your Android phone. You will see a message that confirms that the process has been started. You may now close the phone app.</li>
+                            <li>The app will automatically open on the Wear device after a few seconds, displaying the main menu.</li>
+                            <li>The data will update everytime you enter a new location with the wearable app automatically refreshing.</li>
+                        </ul>
+                        <h5 class="thin">Navigating Around the App</h5>
+                        <ul class="browser-default">
+                            <li>The main menu displays an overview to the surrounding pollutant levels.</li>
+                        </ul>
+                        <img src="../media/docs/smartwatch manual/Explanation.png" width="50%" class="responsive-img hoverable">
+                        <ul class="browser-default">
+                            <li>Each icon represents a particular pollutant type with the icon colour indicating its level in your area : RED (high levels), ORANGE (medium levels), GREEN (low levels). </li>
+                            <li>Clicking an icon will take you to the corresponding readings page.</li>
+                            <li>If there is no data available for a particular pollutant type its icon will be grey and you will not be able to select it.</li>
+                            <li>Each pollutant will have its own colour-coded rating visible, indicating its level in the surrounding area.</li>
+                        </ul>
+                        <img src="../media/docs/smartwatch manual/scaleView.png" width="50%" class="responsive-img hoverable">
+                        <ul class="browser-default">
+                            <li>Tapping on the pollutant icon at the top of the page will show you the raw data values for each pollutant in the surrounding area.</li>
+                        </ul>
+                        <img src="../media/docs/smartwatch manual/rawDataView.png" width="50%" class="responsive-img hoverable">
+                        <ul class="browser-default">
+                            <li>On the occasion that a certain pollutant has no collected data, the scale will appear empty and the raw value will be replaced with '-' To return to the previous page swipe across the screen from left to right.</li>
+                        </ul>
                     </div>
                 </div>
-                <div id="current" class="section scrollspy">
+                <div id="api" class="section scrollspy">
                     <div class="container">
-                        <h5>Current Progress</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                    </div>
-                </div>
-                <div id="future" class="section scrollspy">
-                    <div class="container">
-                        <h5>Future Plans</h5>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
+                        <h5>API Testing</h5>
+                        <div class="divider"></div>
+                        <h5 class="thin">Documentation</h5>
+                        <p>To assist you in understanding the frontend NodeJS API, we have prepared API documentation available at: </p>
+                        <p><a href="http://citydatavisualiser.herokuapp.com/docs/">API Documentation</a></p>
+                        <h5 class="thin">Installation</h5>
+                        <p>Requires node and npm to be installed.</p>
+                        <p>To install the node dependancies run.</p>
+                        <code>npm install -g nodemon</code>
+                        <p>then start the app with npm start or npm debug to run with debugging messages</p>
+                        <p>This will need a mongo database running as described below:</p>
+                        <h5 class="thin">Database</h5>
+                        <p>We use MongoDB for the database. When running the app as development or test you will need to have a database running locally. Once you have mongo installed run it with mongod. If you wish to use a database that isn't running on the default port or isn't running locally change the URI in _config which is described below.</p>
+                        <h5 class="thin">_config.js</h5>
+                        <p>This config file is used to specify the database URIs for development, testing and production. It will look something like this:</p>
+                        <img src="../media/info/api-docs-config.png" width="50%" class="responsive-img hoverable">
+                        <p>In our example we store the credentials for the production database as environment variables on the machine the app is running on. it is then called in app.js in a similar way to here:</p>
+                        <img src="../media/info/api-docs-config2.png" width="50%" class="responsive-img hoverable">
+                        <h5 class="thin">API docs</h5>
+                        <p>To generate the API docs first you have to install apidocsjs</p>
+                        <code>npm install -g apidoc</code>
+                        <p>Then run apidoc -i routes/ -o public/Docs to generate the files needed. This takes routes as the input directory and public/Docs as the output directory.</p>
                     </div>
                 </div>
             </div>
             <div class="col hide-on-small-only m3 l2">
                 <ul class="section table-of-contents">
-                    <li><a href="#intro">Introduction</a></li>
-                    <li><a href="#current">Current Progress</a></li>
-                    <li><a href="#future">Future Plans</a></li>
+                    <li><a href="#smartwatch">Smartwatch and Smartphone User Manual</a></li>
+                    <li><a href="#api">API Testing</a></li>
                 </ul>
             </div>
         </div>
         </div>
     </main>
-    <footer class="page-footer default">
+    <footer class="page-footer default-back">
         <div class="footer-copyright default-back">
             <div class="container">
                 <div class="row">
