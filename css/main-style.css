@@ -94,5 +94,6 @@ ul.browser-default li {
     background: #000;
     border: none;         
     height: 140vh;        
-    width: 85vw;
+    width: 100vw;
+    max-width: 100%;
 }
